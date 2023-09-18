@@ -6,7 +6,7 @@ import {
 } from "next-auth";
 import DiscordProvider from "next-auth/providers/discord";
 
-import { env } from "~/env.mjs";
+import { env } from "../env.mjs";
 
 /**
  * Module augmentation for `next-auth` types. Allows us to add custom properties to the `session`
@@ -34,6 +34,8 @@ declare module "next-auth" {
  *
  * @see https://next-auth.js.org/configuration/options
  */
+const scopes = ['identify'].join(' ')
+
 export const authOptions: NextAuthOptions = {
   callbacks: {
     session: ({ session, token }) => ({
