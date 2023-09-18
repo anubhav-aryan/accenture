@@ -5,7 +5,9 @@ import {
   type NextAuthOptions,
 } from "next-auth";
 import DiscordProvider from "next-auth/providers/discord";
-
+import GoogleProvider from "next-auth/providers/google"
+import GithubProvider from "next-auth/providers/github"
+import FacebookProvider from "next-auth/providers/facebook"
 import { env } from "../env.mjs";
 
 /**
@@ -47,10 +49,23 @@ export const authOptions: NextAuthOptions = {
     }),
   },
   providers: [
-    DiscordProvider({
+     DiscordProvider({
       clientId: env.DISCORD_CLIENT_ID,
       clientSecret: env.DISCORD_CLIENT_SECRET,
     }),
+    GoogleProvider({
+      clientId: env.GOOGLE_CLIENT_ID,
+      clientSecret: env.GOOGLE_CLIENT_SECRET
+    }),
+    GithubProvider({
+      clientId: env.GITHUB_CLIENT_ID,
+      clientSecret: env.GITHUB_CLIENT_SECRET,
+    }),
+    FacebookProvider({
+      clientId: env.FACEBOOK_CLIENT_ID,
+      clientSecret: env.FACEBOOK_CLIENT_SECRET
+    }) 
+    
     /**
      * ...add more providers here.
      *
@@ -61,6 +76,7 @@ export const authOptions: NextAuthOptions = {
      * @see https://next-auth.js.org/providers/github
      */
   ],
+  secret: env.NEXTAUTH_SECRET
 };
 
 /**
