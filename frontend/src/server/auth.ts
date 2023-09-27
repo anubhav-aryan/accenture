@@ -5,9 +5,12 @@ import {
   type NextAuthOptions,
 } from "next-auth";
 import DiscordProvider from "next-auth/providers/discord";
-import GoogleProvider from "next-auth/providers/google"
-import GithubProvider from "next-auth/providers/github"
-import FacebookProvider from "next-auth/providers/facebook"
+import GoogleProvider from "next-auth/providers/google";
+import GithubProvider from "next-auth/providers/github";
+import FacebookProvider from "next-auth/providers/facebook";
+import CredentialsProvider from "next-auth/providers/credentials";
+import dbConnect from "../../utils/dbConnectManager";
+import User from "../../models/userSchema";
 import { env } from "../env.mjs";
 
 /**
@@ -36,26 +39,68 @@ declare module "next-auth" {
  *
  * @see https://next-auth.js.org/configuration/options
  */
-const scopes = ['identify'].join(' ')
+const scopes = ["identify"].join(" ");
 
 export const authOptions: NextAuthOptions = {
   callbacks: {
-    session: ({ session, token }) => ({
-      ...session,
-      user: {
-        ...session.user,
-        id: token.sub,
-      },
-    }),
+    // We can pass in additional information from the user document MongoDB returns
+    // This could be avatars, role, display name, etc...
+    async jwt({ token, user }) {
+      if (user) {
+        token.user = {
+          _id: user._id,
+          email: user.email,
+          role: user.role,
+        };
+      }
+      return token;
+    },
+    // If we want to access our extra user info from sessions we have to pass it the token here to get them in sync:
+    session: async ({ session, token }) => {
+      if (token) {
+        session.user = token.user;
+      }
+      return session;
+    },
   },
   providers: [
-     DiscordProvider({
+    CredentialsProvider({
+      name: "credentials",
+      // The credentials object is what's used to generate Next Auths default login page - We will not use it however.
+      credentials: {
+        email: { label: "Email", type: "email" },
+        password: { label: "Password", type: "password" },
+      },
+      // Authorize callback is ran upon calling the signin function
+      authorize: async (credentials) => {
+        dbConnect();
+
+        // Try to find the user and also return the password field
+        const user = await User.findOne({ email: credentials!.email }).select(
+          "+password",
+        );
+
+        if (!user) {
+          throw new Error("No user with a matching email was found.");
+        }
+
+        // Use the comparePassword method we defined in our user.js Model file to authenticate
+        const pwValid = await user.comparePassword(credentials!.password);
+
+        if (!pwValid) {
+          throw new Error("Your password is invalid");
+        }
+
+        return user;
+      },
+    }),
+    DiscordProvider({
       clientId: env.DISCORD_CLIENT_ID,
       clientSecret: env.DISCORD_CLIENT_SECRET,
     }),
     GoogleProvider({
       clientId: env.GOOGLE_CLIENT_ID,
-      clientSecret: env.GOOGLE_CLIENT_SECRET
+      clientSecret: env.GOOGLE_CLIENT_SECRET,
     }),
     GithubProvider({
       clientId: env.GITHUB_CLIENT_ID,
@@ -63,9 +108,9 @@ export const authOptions: NextAuthOptions = {
     }),
     FacebookProvider({
       clientId: env.FACEBOOK_CLIENT_ID,
-      clientSecret: env.FACEBOOK_CLIENT_SECRET
-    }) 
-    
+      clientSecret: env.FACEBOOK_CLIENT_SECRET,
+    }),
+
     /**
      * ...add more providers here.
      *
@@ -76,7 +121,10 @@ export const authOptions: NextAuthOptions = {
      * @see https://next-auth.js.org/providers/github
      */
   ],
-  secret: env.NEXTAUTH_SECRET
+  pages: {
+    signIn: "ADD LOGIN PAGE HERE",
+  },
+  secret: env.NEXTAUTH_SECRET,
 };
 
 /**
