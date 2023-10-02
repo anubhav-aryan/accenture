@@ -12,6 +12,7 @@
     "bcrypt"
   ],
   "dependencies": {
+    "@emotion/css": "^11.11.2",
     "@t3-oss/env-nextjs": "^0.6.0",
     "@types/bcrypt": "^5.0.0",
     "bcrypt": "^5.1.1",
@@ -22,6 +23,9 @@
     "node-gyp": "^9.4.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "slate": "^0.94.1",
+    "slate-history": "^0.93.0",
+    "slate-react": "^0.99.0",
     "validator": "^13.11.0",
     "zod": "^3.21.4"
   },
