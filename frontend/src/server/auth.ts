@@ -8,7 +8,7 @@ import DiscordProvider from "next-auth/providers/discord";
 import GoogleProvider from "next-auth/providers/google";
 import GithubProvider from "next-auth/providers/github";
 import FacebookProvider from "next-auth/providers/facebook";
-import CredentialsProvider from "next-auth/providers/credentials";
+// import CredentialsProvider from "next-auth/providers/credentials";
 import dbConnect from "../../utils/dbConnectManager";
 import User from "../../models/userSchema";
 import { env } from "../env.mjs";
@@ -55,7 +55,7 @@ export const authOptions: NextAuthOptions = {
       }
       return token;
     },
-    // If we want to access our extra user info from sessions we have to pass it the token here to get them in sync:
+    // // If we want to access our extra user info from sessions we have to pass it the token here to get them in sync:
     session: async ({ session, token }) => {
       if (token) {
         session.user = token.user;
@@ -64,36 +64,36 @@ export const authOptions: NextAuthOptions = {
     },
   },
   providers: [
-    CredentialsProvider({
-      name: "credentials",
-      // The credentials object is what's used to generate Next Auths default login page - We will not use it however.
-      credentials: {
-        email: { label: "Email", type: "email" },
-        password: { label: "Password", type: "password" },
-      },
-      // Authorize callback is ran upon calling the signin function
-      authorize: async (credentials) => {
-        dbConnect();
+    // CredentialsProvider({
+    //   name: "credentials",
+    //   // The credentials object is what's used to generate Next Auths default login page - We will not use it however.
+    //   credentials: {
+    //     email: { label: "Email", type: "email" },
+    //     password: { label: "Password", type: "password" },
+    //   },
+    //   // Authorize callback is ran upon calling the signin function
+    //   authorize: async (credentials) => {
+    //     dbConnect();
 
-        // Try to find the user and also return the password field
-        const user = await User.findOne({ email: credentials!.email }).select(
-          "+password",
-        );
+    //     // Try to find the user and also return the password field
+    //     const user = await User.findOne({ email: credentials!.email }).select(
+    //       "+password",
+    //     );
 
-        if (!user) {
-          throw new Error("No user with a matching email was found.");
-        }
+    //     if (!user) {
+    //       throw new Error("No user with a matching email was found.");
+    //     }
 
-        // Use the comparePassword method we defined in our user.js Model file to authenticate
-        const pwValid = await user.comparePassword(credentials!.password);
+    //     // Use the comparePassword method we defined in our user.js Model file to authenticate
+    //     const pwValid = await user.comparePassword(credentials!.password);
 
-        if (!pwValid) {
-          throw new Error("Your password is invalid");
-        }
+    //     if (!pwValid) {
+    //       throw new Error("Your password is invalid");
+    //     }
 
-        return user;
-      },
-    }),
+    //     return user;
+    //   },
+    // }),
     DiscordProvider({
       clientId: env.DISCORD_CLIENT_ID,
       clientSecret: env.DISCORD_CLIENT_SECRET,
@@ -121,9 +121,9 @@ export const authOptions: NextAuthOptions = {
      * @see https://next-auth.js.org/providers/github
      */
   ],
-  pages: {
-    signIn: "ADD LOGIN PAGE HERE",
-  },
+  // pages: {
+  //   signIn: "ADD LOGIN PAGE HERE",
+  // },
   secret: env.NEXTAUTH_SECRET,
 };
 
