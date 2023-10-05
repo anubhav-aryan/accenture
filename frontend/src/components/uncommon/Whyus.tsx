@@ -3,7 +3,15 @@ import React from "react";
 const Whyus = () => {
   return (
     <>
-      <div className="flex min-h-screen items-center justify-center gap-52">
+      <div className="flex items-center justify-center py-10 text-3xl font-bold">
+        Easy, Simple, Affordable
+      </div>
+      <div className="flex items-center justify-center py-10 text-xl font-bold text-gray-600">
+        Our platform helps your business in managing expenses. These are some of
+        the reasons why <br /> you should use our platform in managing business
+        finances.
+      </div>
+      <div className="flex items-center justify-center gap-52 py-24">
         <div className="group h-96 w-80 [perspective:1000px]">
           <div className="relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
             <div className="absolute inset-0">
