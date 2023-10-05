@@ -11,9 +11,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <Link href="/richtext">
-        Text Editor 
-      </Link>
     </>
   );
 }
