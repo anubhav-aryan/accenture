@@ -16,7 +16,7 @@ const SigninButton = () => {
   return (
     <button
       onClick={() => signIn()}
-      className="ml-auto rounded-xl bg-emerald-400 px-3 py-1 text-lg text-white"
+      className="ml-auto rounded-xl bg-emerald-400 hover:bg-emerald-300 px-3 py-1 text-xl text-white"
     >
       Sign Up
     </button>
