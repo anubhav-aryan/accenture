@@ -8,6 +8,7 @@ const Footer = () => {
           <div className="text-5xl font-semibold text-emerald-500">
             ScriptScanner
           </div>
+          <div className="py-4"></div>
           <p className="mt-2 text-sm font-medium text-black">
             Explore our website for advanced image processing and AI solutions.
             We enhance text extraction, image upscaling, intuitive editing, and
@@ -18,6 +19,7 @@ const Footer = () => {
           <div className="mb-3 text-4xl font-semibold tracking-widest text-emerald-500">
             Quick Links
           </div>
+          <div className="py-4"></div>
           <div className="mb-3">
             <a className="px-20 font-medium text-black">Home</a>
           </div>
@@ -32,6 +34,7 @@ const Footer = () => {
           <div className="mb-3 text-3xl font-semibold tracking-widest text-emerald-500">
             Contact Us
           </div>
+          <div className="py-4"></div>
           <div className="mb-3">
             <a className="font-medium text-black">scriptscanner@gmail.com</a>
           </div>
