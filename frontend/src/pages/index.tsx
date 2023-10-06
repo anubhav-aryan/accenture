@@ -14,6 +14,11 @@ export default function Home() {
       <Link href="/richtext">
         Text Editor 
       </Link>
+      <br></br>
+       <Link href="/imageprediction">
+        Prediction Page
+      </Link>
+
     </>
   );
 }
