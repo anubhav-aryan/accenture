@@ -5,23 +5,26 @@ import Image from "next/image";
 
 const Header = () => {
   return (
-    <>
-      <header className="body-font text-black">
-        <div className="container mx-auto flex flex-col flex-wrap items-center p-5 md:flex-row">
-          <a className="title-font mb-4 flex items-center font-medium text-white md:mb-0 border-black border-4 bg-emerald-300">
+    <div className="body-font text-black border-b-4">
+      <div className="mx-auto flex flex-row items-center justify-between p-2 md:flex-row">
+        <div className="title-font mb-4 flex items-center border-4 border-black bg-emerald-300 font-medium text-white md:mb-0">
+          <div>
             <Image src="/logo.svg" alt="logo" width={50} height={50} />
-            <span className="ml-3 text-xl text-black pr-3">ScriptScanner</span>
-          </a>
-          <nav className="flex flex-wrap items-center justify-center text-base md:ml-auto md:mr-auto">
-            <a className="mr-5 hover:text-white">Home</a>
-            <a className="mr-5 hover:text-white">Product</a>
-            <a className="mr-5 hover:text-white">FAQ</a>
-            <a className="mr-5 hover:text-white">About Us</a>
-          </nav>
+          </div>
+          <div className="ml-3 pr-3 text-2xl text-white py-3">ScriptScanner</div>
+        </div>
+        <div className="flex-grow"></div>{" "}
+        <div className="flex items-end justify-end px-6 text-xl font-medium text-gray-700 ">
+          <div className="px-8 hover:text-gray-500">Home</div>
+          <div className="px-8 hover:text-gray-500">Product</div>
+          <div className="px-8 hover:text-gray-500">FAQ</div>
+          <div className="px-8 hover:text-gray-500">About Us</div>
+        </div>
+        <div>
           <SigninButton />
         </div>
-      </header>
-    </>
+      </div>
+    </div>
   );
 };
 
