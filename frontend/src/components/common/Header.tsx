@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { signIn, signOut, useSession } from "next-auth/react";
 import SigninButton from "../uncommon/Signinbutton";
 import Image from "next/image";
+import Link from "next/link"
 
 const Header = () => {
   const [scrollPercentage, setScrollPercentage] = useState(0);
@@ -34,12 +35,20 @@ const Header = () => {
             ScriptScanner
           </div>
         </div>
-        <div className="flex-grow"></div>
+      <div className="flex-grow"></div>
         <div className="flex items-end justify-end space-x-6 text-xl font-medium text-gray-700">
-          <div className="hover:text-gray-500">Home</div>
-          <div className="hover:text-gray-500">Product</div>
-          <div className="hover:text-gray-500">FAQ</div>
-          <div className="hover:text-gray-500">About Us</div>
+          <Link href="/"> {/* Wrap "Home" with Link */}
+            <h2 className="hover:text-gray-500">Home</h2>
+          </Link>
+          <Link href="/product"> {/* Wrap "Product" with Link */}
+            <h2 className="hover:text-gray-500">Product</h2>
+          </Link>
+          <Link href="/faq"> {/* Wrap "FAQ" with Link */}
+            <h2 className="hover:text-gray-500">FAQ</h2>
+          </Link>
+          <Link href="/about"> {/* Wrap "About Us" with Link */}
+            <h2 className="hover:text-gray-500">About Us</h2>
+          </Link>
         </div>
         <div className="ml-2">
           <SigninButton />
