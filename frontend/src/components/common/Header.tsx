@@ -1,6 +1,6 @@
 import React from "react";
 import { signIn, signOut, useSession } from "next-auth/react";
-import SigninButton from "./uncommon/Signinbutton";
+import SigninButton from "../uncommon/Signinbutton";
 import Image from "next/image";
 
 const Header = () => {
