@@ -1,5 +1,7 @@
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
+import Footer from "@/components/common/Footer";
+import Header from "@/components/common/Header";
+import Hero from "@/components/uncommon/Hero";
+import Pricing from "@/components/uncommon/Pricing";
 import Tools from "@/components/uncommon/Tools";
 import Whyus from "@/components/uncommon/Whyus";
 import Head from "next/head";
@@ -14,8 +16,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
+      <Hero />
       <Whyus />
-      <Tools/>
+      <Tools />
       <Footer />
     </>
   );
