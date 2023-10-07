@@ -5,8 +5,8 @@ const Hero = () => {
   return (
     <div>
       <section className="body-font text-black">
-        <div className="container mx-auto flex flex-col items-center px-5 py-24 md:flex-row">
-          <div className="mb-16 flex flex-col items-center text-center md:mb-0 md:w-1/2 md:items-start md:pr-16 md:text-left lg:flex-grow lg:pr-24">
+        <div className="container mx-auto flex flex-col items-center px-5 py-24 md:flex-row justify-center">
+          <div className="mb-16 flex flex-col items-center text-center md:mb-0 md:w-1/2 md:items-start md:pr-16 md:text-left">
             <h1 className="title-font mb-4 text-3xl font-medium text-black sm:text-4xl">
               We make PDF easy.
             </h1>
