@@ -1,65 +1,86 @@
-import React from 'react';
-import Image from 'next/image';
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 const Tools = () => {
   return (
     <>
-     <h1 className="text-left px-4 md:px-12 md:mx-12 text-2xl md:text-3xl font-bold font-['Inter'] py-12">ScriptScanner Tools</h1>
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-3 px-4 md:px-8 lg:px-12 lg:mx-12">
-      {/* Tool 1 */}
-      <div className="relative bg-emerald-400 rounded-lg bg-opacity-10 border border-zinc-400 py-8 px-4 md:px-8 justify-start items-center gap-6 inline-flex">
-        <Image src="/ICON 1.svg" alt="logo" width={50} height={50} />
-         <p className="text-lg font-bold">Read Text</p>
-      </div>
+      <h1 className="px-4 py-12 text-left font-['Inter'] text-2xl font-bold md:mx-12 md:px-12 md:text-3xl">
+        ScriptScanner Tools
+      </h1>
+      <div className="grid grid-cols-1 gap-3 px-4 md:grid-cols-3 md:px-8 lg:mx-12 lg:px-12">
+        {/* Tool 1 - Read Text */}
+        <Link href="/read-text">
+          <div className="relative items-center justify-start gap-6 rounded-lg border border-zinc-400 bg-emerald-400 bg-opacity-10 px-4 py-8 md:px-8">
+            <Image src="/ICON 1.svg" alt="logo" width={50} height={50} />
+            <p className="text-lg font-bold">Read Text</p>
+          </div>
+        </Link>
 
-      {/* Tool 2 */}
-      <div className="relative bg-emerald-400 bg-opacity-20 rounded-lg border border-zinc-400 py-8 px-4 md:px-8 justify-start items-center gap-6 inline-flex">
-        <Image src="/ICON 2.svg" alt="logo" width={50} height={50} />
-         <p className="text-lg font-bold">Edit with Prompt</p>
-      </div>
+        {/* Tool 2 - Edit with Prompt */}
+        <Link href="/edit-with-prompt">
+          <div className="relative items-center justify-start gap-6 rounded-lg border border-zinc-400 bg-emerald-400 bg-opacity-20 px-4 py-8 md:px-8">
+            <Image src="/ICON 2.svg" alt="logo" width={50} height={50} />
+            <p className="text-lg font-bold">Edit with Prompt</p>
+          </div>
+        </Link>
 
-      {/* Tool 3 */}
-      <div className="relative bg-emerald-400 bg-opacity-30 rounded-lg border border-zinc-400 py-8 px-2 md:px-8 justify-start items-center gap-6 inline-flex">
-        <Image src="/ICON 3.svg" alt="logo" width={50} height={50} />
-         <p className="text-lg font-bold">Enhance Image</p>
-      </div>
+        {/* Tool 3 - Enhance Image */}
+        <Link href="/enhance-image">
+          <div className="relative items-center justify-start gap-6 rounded-lg border border-zinc-400 bg-emerald-400 bg-opacity-30 px-4 py-8 md:px-8">
+            <Image src="/ICON 3.svg" alt="logo" width={50} height={50} />
+            <p className="text-lg font-bold">Enhance Image</p>
+          </div>
+        </Link>
 
-      {/* Tool 4 */}
-      <div className="relative bg-emerald-400 bg-opacity-40 rounded-lg border border-zinc-400  py-8 px-2 md:px-8 justify-start items-center gap-5 inline-flex">
-        <Image src="/ICON 4.svg" alt="logo" width={50} height={50} />
-         <p className="text-lg font-bold">Modify Theme</p>
-      </div>
+        {/* Tool 4 - Modify Theme */}
+        <Link href="/modify-theme">
+          <div className="relative items-center justify-start gap-6 rounded-lg border border-zinc-400 bg-emerald-400 bg-opacity-40 px-4 py-8 md:px-8">
+            <Image src="/ICON 4.svg" alt="logo" width={50} height={50} />
+            <p className="text-lg font-bold">Modify Theme</p>
+          </div>
+        </Link>
 
-      {/* Tool 5 */}
-      <div className="relative bg-emerald-400 bg-opacity-50 rounded-lg border border-zinc-400 py-8 px-2 md:px-8 justify-start items-center gap-6 inline-flex">
-        <Image src="/ICON 1.svg" alt="logo" width={50} height={50} />
-         <p className="text-lg font-bold">Edit Text</p>
-      </div>
+        {/* Tool 5 - Edit Text */}
+        <Link href="/edit-text">
+          <div className="relative items-center justify-start gap-6 rounded-lg border border-zinc-400 bg-emerald-400 bg-opacity-50 px-4 py-8 md:px-8">
+            <Image src="/ICON 1.svg" alt="logo" width={50} height={50} />
+            <p className="text-lg font-bold">Edit Text</p>
+          </div>
+        </Link>
 
-      {/* Tool 6 */}
-      <div className="relative bg-emerald-400 bg-opacity-60 rounded-lg border border-zinc-400 py-8 px-2 md:px-8 justify-start items-center gap-6 inline-flex">
-        <Image src="/ICON 2.svg" alt="logo" width={50} height={50} />
-         <p className="text-lg font-bold">Edit Watermark</p>
-      </div>
+        {/* Tool 6 - Edit Watermark */}
+        <Link href="/edit-watermark">
+          <div className="relative items-center justify-start gap-6 rounded-lg border border-zinc-400 bg-emerald-400 bg-opacity-60 px-4 py-8 md:px-8">
+            <Image src="/ICON 2.svg" alt="logo" width={50} height={50} />
+            <p className="text-lg font-bold">Edit Watermark</p>
+          </div>
+        </Link>
 
-      {/* Tool 7 */}
-      <div className="relative bg-emerald-400 bg-opacity-70 rounded-lg border border-zinc-400 py-8 px-2 md:px-8 justify-start items-center gap-3.5 inline-flex">
-        <Image src="/ICON 3.svg" alt="logo" width={50} height={50} />
-         <p className="text-lg font-bold">Read Text</p>
-      </div>
+        {/* Tool 7 - Read Text */}
+        <Link href="/read-text">
+          <div className="relative items-center justify-start gap-6 rounded-lg border border-zinc-400 bg-emerald-400 bg-opacity-70 px-4 py-8 md:px-8">
+            <Image src="/ICON 3.svg" alt="logo" width={50} height={50} />
+            <p className="text-lg font-bold">Read Text</p>
+          </div>
+        </Link>
 
-      {/* Tool 8 */}
-      <div className="relative bg-emerald-400 bg-opacity-80 rounded-lg border border-zinc-400 py-8 px-2 md:px-8 justify-start items-center gap-3.5 inline-flex">
-        <Image src="/ICON 4.svg" alt="logo" width={50} height={50} />
-         <p className="text-lg font-bold">Read Text</p>
-      </div>
+        {/* Tool 8 - Read Text */}
+        <Link href="/read-text">
+          <div className="relative items-center justify-start gap-6 rounded-lg border border-zinc-400 bg-emerald-400 bg-opacity-80 px-4 py-8 md:px-8">
+            <Image src="/ICON 4.svg" alt="logo" width={50} height={50} />
+            <p className="text-lg font-bold">Read Text</p>
+          </div>
+        </Link>
 
-      {/* Tool 9 */}
-      <div className="relative bg-emerald-400 bg-opacity-90 rounded-lg border border-zinc-400 py-8 px-2 md:px-8 justify-start items-center gap-4 inline-flex">
-        <Image src="/ICON 1.svg" alt="logo" width={50} height={50} />
-         <p className="text-lg font-bold">Feedback</p>
+        {/* Tool 9 - Feedback */}
+        <Link href="/feedback">
+          <div className="relative items-center justify-start gap-6 rounded-lg border border-zinc-400 bg-emerald-400 bg-opacity-90 px-4 py-8 md:px-8">
+            <Image src="/ICON 1.svg" alt="logo" width={50} height={50} />
+            <p className="text-lg font-bold">Feedback</p>
+          </div>
+        </Link>
       </div>
-    </div>
     </>
   );
 };
