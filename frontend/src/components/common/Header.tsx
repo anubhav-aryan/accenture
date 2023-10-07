@@ -40,8 +40,8 @@ const Header = () => {
           <Link href="/"> {/* Wrap "Home" with Link */}
             <h2 className="hover:text-gray-500">Home</h2>
           </Link>
-          <Link href="/product"> {/* Wrap "Product" with Link */}
-            <h2 className="hover:text-gray-500">Product</h2>
+          <Link href="#tools"> {/* Wrap "Product" with Link */}
+            <h2 className="hover:text-gray-500">Tools</h2>
           </Link>
           <Link href="/faq"> {/* Wrap "FAQ" with Link */}
             <h2 className="hover:text-gray-500">FAQ</h2>
