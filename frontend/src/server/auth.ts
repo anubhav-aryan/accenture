@@ -121,9 +121,9 @@ export const authOptions: NextAuthOptions = {
      * @see https://next-auth.js.org/providers/github
      */
   ],
-  // pages: {
-  //   signIn: "ADD LOGIN PAGE HERE",
-  // },
+  pages: {
+    signIn: '/auth/signin',
+  },
   secret: env.NEXTAUTH_SECRET,
 };
 
