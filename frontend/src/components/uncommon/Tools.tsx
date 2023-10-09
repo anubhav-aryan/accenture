@@ -19,10 +19,10 @@ const Tools = () => {
           </Link>
 
           {/* Tool 2 - Edit with Prompt */}
-          <Link href="/edit-with-prompt">
+          <Link href="imageprediction">
             <div className="flex relative items-center justify-start gap-6 rounded-lg border border-zinc-400 bg-emerald-400 bg-opacity-20 px-4 py-8 md:px-8">
               <Image src="/ICON 2.svg" alt="logo" width={50} height={50} />
-              <p className="text-lg font-bold">Edit with Prompt</p>
+              <p className="text-lg font-bold">Image Prediction</p>
             </div>
           </Link>
 
