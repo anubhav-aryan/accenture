@@ -15,7 +15,7 @@ export default function ImagePrediction() {
   const onSubmit = async (data: { inputText: string }) => {
     try {
       const app = await client(
-        "https://veer15-stabilityai-stable-diffusion-2-1.hf.space/",
+        "https://veer15-stabilityai-stable-diffusion-2-1.hf.space/" ,{},
       );
       const result = await app.predict("/predict", [data.inputText]);
       setPredictionResult(result);
@@ -50,7 +50,7 @@ export default function ImagePrediction() {
         </form>
 
         {predictionResult && (
-          <div className="flex flex-col items-end justify-end">
+          <div className="flex flex-col items-center justify-center">
             <h2>Prediction Result:</h2>
             <img
               src={predictionResult.data[0]}
