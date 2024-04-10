@@ -17,13 +17,13 @@ const Whyus = () => {
             <div className="relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
               <div className="absolute inset-0">
                 <img
-                  src="/Bhavya.jpg"
+                  src="  " //Photo Card 1
                   className="h-full w-full rounded-xl object-cover shadow-xl shadow-black/40"
                 />
               </div>
 
               <div className="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-slate-200 [backface-visibility:hidden] [transform:rotateY(180deg)]">
-                <div className="text-4xl">Bhavya</div>
+                <div className="text-4xl">CARD 1 TEXT</div>
               </div>
             </div>
           </div>
@@ -31,13 +31,13 @@ const Whyus = () => {
             <div className="relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
               <div className="absolute inset-0">
                 <img
-                  src="/chadboys.jpg"
+                  src="  " //Photo Card 2
                   className="h-full w-full rounded-xl object-cover shadow-xl shadow-black/40"
                 />
               </div>
 
               <div className="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-slate-200 [backface-visibility:hidden] [transform:rotateY(180deg)]">
-                <div className="text-4xl">Chad Boys with Bhavya Alisha </div>
+                <div className="text-4xl"> CARD 2 TEXT </div>
               </div>
             </div>
           </div>
@@ -45,13 +45,13 @@ const Whyus = () => {
             <div className="relative h-full w-full rounded-xl shadow-xl transition-all duration-500 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
               <div className="absolute inset-0">
                 <img
-                  src="/Alisha.jpg"
+                  src=" " //Photo Card 3
                   className="h-full w-full rounded-xl object-cover shadow-xl shadow-black/40"
                 />
               </div>
 
               <div className="absolute inset-0 h-full w-full rounded-xl bg-black/80 px-12 text-center text-slate-200 [backface-visibility:hidden] [transform:rotateY(180deg)]">
-                <div className="text-4xl">Alisha</div>
+                <div className="text-4xl"> CARD 3 TEXT </div>
               </div>
             </div>
           </div>
@@ -62,3 +62,4 @@ const Whyus = () => {
 };
 
 export default Whyus;
+
