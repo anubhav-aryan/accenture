@@ -28,6 +28,7 @@ const Header = () => {
   return (
     <div className="sticky top-0 z-10 bg-white">
       <div className="relative mx-auto flex flex-row items-center justify-between p-2 md:flex-row">
+        <Link href=" / ">
         <div className="flex items-center space-x-3">
           <div>
             <Image src="/logo.svg" alt="logo" width={50} height={50} />
@@ -36,8 +37,9 @@ const Header = () => {
             ScriptScanner
           </div>
         </div>
+        </Link>
         <div className="flex-grow"></div>
-        <div className="flex items-end justify-end space-x-6 text-xl font-medium text-gray-700">
+        <div className="flex items-end justify-end gap-8 space-x-6 text-xl font-medium text-gray-700">
           <Link href="/">
             {" "}
             {/* Wrap "Home" with Link */}
@@ -59,7 +61,7 @@ const Header = () => {
             <h2 className="hover:text-gray-500">About Us</h2>
           </Link>
         </div>
-        <div className="ml-2">
+        <div className="px-10">
           <SigninButton />
         </div>
       </div>

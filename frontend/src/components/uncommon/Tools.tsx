@@ -11,7 +11,7 @@ const Tools = () => {
         </h1>
         <div className="grid grid-cols-1 gap-3 px-4 md:grid-cols-3 md:px-8 lg:mx-12 lg:px-12">
           {/* Tool 1 - Read Text */}
-          <Link href="/read-text">
+          <Link href="/readtext">
             <div className="relative flex items-center justify-start gap-6 rounded-lg border border-zinc-400 bg-emerald-400 bg-opacity-10 px-4 py-8 md:px-8">
               <Image src="/ICON 1.svg" alt="logo" width={50} height={50} />
               <p className="text-lg font-bold">Read Text</p>
