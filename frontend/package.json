@@ -1,0 +1,61 @@
+{
+  "name": "accenture",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "lint": "next lint",
+    "start": "next start"
+  },
+  "trustedDependencies": [
+    "bcrypt"
+  ],
+  "dependencies": {
+    "@emotion/css": "^11.11.2",
+    "@gradio/client": "latest",
+    "@liveblocks/client": "^1.4.1",
+    "@liveblocks/react": "^1.4.1",
+    "@liveblocks/yjs": "^1.4.1",
+    "@slate-yjs/core": "^1.0.2",
+    "@t3-oss/env-nextjs": "^0.6.0",
+    "@types/bcrypt": "^5.0.0",
+    "bcrypt": "^5.1.1",
+    "mongoose": "^7.5.2",
+    "net": "^1.0.2",
+    "next": "^13.4.19",
+    "next-auth": "^4.23.0",
+    "next-connect": "^1.0.0",
+    "node-gyp": "^9.4.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-hook-form": "^7.47.0",
+    "react-markdown": "^9.0.1",
+    "slate": "latest",
+    "slate-history": "^0.93.0",
+    "slate-react": "^0.99.0",
+    "tls": "^0.0.1",
+    "validator": "^13.11.0",
+    "yjs": "^13.6.8",
+    "zod": "^3.21.4"
+  },
+  "devDependencies": {
+    "@types/eslint": "^8.44.2",
+    "@types/node": "^18.16.0",
+    "@types/react": "^18.2.20",
+    "@types/react-dom": "^18.2.7",
+    "@typescript-eslint/eslint-plugin": "^6.3.0",
+    "@typescript-eslint/parser": "^6.3.0",
+    "autoprefixer": "^10.4.14",
+    "eslint": "^8.47.0",
+    "eslint-config-next": "^13.4.19",
+    "postcss": "^8.4.27",
+    "prettier": "^3.0.0",
+    "prettier-plugin-tailwindcss": "^0.5.1",
+    "tailwindcss": "^3.3.3",
+    "typescript": "^5.1.6"
+  },
+  "ct3aMetadata": {
+    "initVersion": "7.20.2"
+  }
+}
