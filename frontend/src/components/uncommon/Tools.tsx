@@ -27,60 +27,60 @@ const Tools = () => {
           </Link>
 
           {/* Tool 3 - Enhance Image */}
-          <Link href="/enhance-image">
+          <Link href="/imagedesc">
             <div className="relative flex items-center justify-start gap-6 rounded-lg border border-zinc-400 bg-emerald-400 bg-opacity-30 px-4 py-8 md:px-8">
               <Image src="/ICON 3.svg" alt="logo" width={50} height={50} />
-              <p className="text-lg font-bold">Enhance Image</p>
+              <p className="text-lg font-bold">Image Description</p>
             </div>
           </Link>
 
           {/* Tool 4 - Modify Theme */}
-          <Link href="/modify-theme">
+          <Link href="/solutiongen">
             <div className="relative flex items-center justify-start gap-6 rounded-lg border border-zinc-400 bg-emerald-400 bg-opacity-40 px-4 py-8 md:px-8">
               <Image src="/ICON 4.svg" alt="logo" width={50} height={50} />
-              <p className="text-lg font-bold">Modify Theme</p>
+              <p className="text-lg font-bold">Solution Generator</p>
             </div>
           </Link>
 
-          {/* Tool 5 - Edit Text */}
-          <Link href="/edit-text">
+          
+          {/* <Link href="/edit-text">
             <div className="relative flex items-center justify-start gap-6 rounded-lg border border-zinc-400 bg-emerald-400 bg-opacity-50 px-4 py-8 md:px-8">
               <Image src="/ICON 1.svg" alt="logo" width={50} height={50} />
               <p className="text-lg font-bold">Edit Text</p>
             </div>
-          </Link>
+          </Link> */}
 
           {/* Tool 6 - Edit Watermark */}
-          <Link href="/edit-watermark">
+          {/* <Link href="/edit-watermark">
             <div className="relative flex items-center justify-start gap-6 rounded-lg border border-zinc-400 bg-emerald-400 bg-opacity-60 px-4 py-8 md:px-8">
               <Image src="/ICON 2.svg" alt="logo" width={50} height={50} />
               <p className="text-lg font-bold">Edit Watermark</p>
             </div>
-          </Link>
+          </Link> */}
 
           {/* Tool 7 - Read Text */}
-          <Link href="/read-text">
+          {/* <Link href="/read-text">
             <div className="relative flex items-center justify-start gap-6 rounded-lg border border-zinc-400 bg-emerald-400 bg-opacity-70 px-4 py-8 md:px-8">
               <Image src="/ICON 3.svg" alt="logo" width={50} height={50} />
               <p className="text-lg font-bold">Read Text</p>
             </div>
-          </Link>
+          </Link> */}
 
           {/* Tool 8 - Read Text */}
-          <Link href="/read-text">
+          {/* <Link href="/read-text">
             <div className="relative flex items-center justify-start gap-6 rounded-lg border border-zinc-400 bg-emerald-400 bg-opacity-80 px-4 py-8 md:px-8">
               <Image src="/ICON 4.svg" alt="logo" width={50} height={50} />
               <p className="text-lg font-bold">Read Text</p>
             </div>
-          </Link>
+          </Link> */}
 
           {/* Tool 9 - Feedback */}
-          <Link href="/feedback">
+          {/* <Link href="/feedback">
             <div className="relative flex items-center justify-start gap-6 rounded-lg border border-zinc-400 bg-emerald-400 bg-opacity-90 px-4 py-8 md:px-8">
               <Image src="/ICON 1.svg" alt="logo" width={50} height={50} />
               <p className="text-lg font-bold">Feedback</p>
             </div>
-          </Link>
+          </Link> */}
         </div>
       </div>
     </>
