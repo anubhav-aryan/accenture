@@ -3,6 +3,7 @@ import { SessionProvider } from "next-auth/react";
 import { type AppType } from "next/app";
 import Provider from "@/components/Provider";
 import "../styles/globals.css";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const MyApp: AppType<{ session: Session | null }> = ({
   Component,
@@ -10,9 +11,11 @@ const MyApp: AppType<{ session: Session | null }> = ({
 }) => {
   return (
     <main>
-    <SessionProvider session={session}>
-      <Component {...pageProps} />
-    </SessionProvider>
+      <ClerkProvider>
+        <SessionProvider session={session}>
+          <Component {...pageProps} />
+        </SessionProvider>
+      </ClerkProvider>
     </main>
   );
 };
