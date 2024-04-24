@@ -5,13 +5,16 @@ import { uploadToS3 } from '@/lib/s3';
 import axios from 'axios'
 import { useMutation } from "@tanstack/react-query"
 import toast from 'react-hot-toast';
+import { useRouter } from "next/navigation";
+
 type FileUploadProps = {
     
 };
 
 const FileUpload:React.FC<FileUploadProps> = () => {
+  const router = useRouter();
   const [uploading, setUploading] = React.useState(false);
-  const { mutate, isLoading} = useMutation({
+  const { mutate, isPending} = useMutation({
     mutationFn: async ({
       file_key,
       file_name,
@@ -49,6 +52,7 @@ const FileUpload:React.FC<FileUploadProps> = () => {
         mutate(data, {
           onSuccess: ({ chat_id }) => {
             toast.success("Chat created!");
+            router.push(`/chat/${chat_id}`);
             
           },
           onError: (err) => {
@@ -73,7 +77,7 @@ const FileUpload:React.FC<FileUploadProps> = () => {
         })}
       >
         <input {...getInputProps()} />
-        {uploading || isLoading ? (
+        {uploading || isPending ? ( 
           <>
             {/* loading state */}
             <Loader2 className="h-10 w-10 text-blue-500 animate-spin" />

@@ -20,7 +20,7 @@
           "@/*": ["./src/*"]
       }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/texteditor/components.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/texteditor/components.tsx", "src/middleware.ts"],
   "exclude": ["node_modules"]
 
   

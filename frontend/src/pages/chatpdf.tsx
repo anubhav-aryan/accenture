@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import FileUpload from '@/components/FileUpload';
 import Provider from '@/components/Provider';
 import { Toaster } from 'react-hot-toast';
+import {ClerkProvider} from '@clerk/nextjs'
 type chatpdfProps = {
     
 };
@@ -11,6 +12,7 @@ const chatpdf:React.FC<chatpdfProps> = () => {
     
     return(
         <>
+        <ClerkProvider>
         <Provider>
           <Toaster/>
         <div className="w-screen min-h-screen bg-gradient-to-r from-rose-100 to-teal-300">
@@ -34,6 +36,7 @@ const chatpdf:React.FC<chatpdfProps> = () => {
                </div>
           
                </Provider>
+               </ClerkProvider>
        </>
     )
 }
