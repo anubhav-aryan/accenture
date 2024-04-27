@@ -4,22 +4,10 @@ import FileUpload from '@/components/FileUpload';
 import Link from 'next/link';
 import { ArrowRight, LogIn } from "lucide-react";
 import React from 'react';
-import { db } from "@/lib/db";
-import { chats } from "@/lib/db/schema";
-import { eq } from "drizzle-orm";
 
 export default function ChatPdf() {
   const {userId} = useAuth()
-  const isAuth = !!userId;
-  let firstChat;
-  if(userId) {
-    db.select().from(chats).where(eq(chats.userId, userId)).then((fc) => {
-      if (fc) {
-        firstChat = fc[0];
-      }
-    });
-    
-  }
+  const isAuth = !!userId
   return (
     <div className='w-screen min-h-screen bg-gradient-to-r from-rose-100 to-teal-100'>
       <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>
@@ -31,15 +19,7 @@ export default function ChatPdf() {
             <UserButton afterSignOutUrl='/' />
           </div>
           <div className='flex mt-2'>
-            {isAuth && firstChat && (
-              <>
-              <Link href={`/chats/${firstChat.id}`}>
-                <Button>
-                Go to Chats <ArrowRight className="ml-2" />
-                </Button>
-                </Link>
-              </>
-            )} 
+            {isAuth && <Button>Go to Chats</Button>}
           </div>
           <p className="max-w-xl mt-1 text-lg text-slate-600">
             Join millions of students, researchers and professionals to instantly
