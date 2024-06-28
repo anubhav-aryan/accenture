@@ -1,28 +1,50 @@
-# Create T3 App
+##  Image Feature Extraction with Gemini API
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+This project allows users to extract various features from images using the Gemini API.
 
-## What's next? How do I make an app with this?
+**Features:**
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+* **Text Extraction:** Read text within images (documents, signs, etc.)
+* **Problem Solving:** Solve problems presented visually (math equations, diagrams).
+* **Image Description:** Generate descriptions of image content for visually impaired users.
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+**Requirements:**
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+* Python 3.x
+* Gemini API access (refer to Gemini documentation for signup)
 
-## Learn More
+**Usage:**
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+1. Clone the repository:
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+```bash
+git clone https://github.com/your-username/image-feature-extraction.git
+```
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+2. Install dependencies (replace `requirements.txt` with your actual file name):
 
-## How do I deploy this?
+```bash
+pip install -r requirements.txt
+```
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+3. Set your Gemini API key in `config.py` (replace `YOUR_API_KEY` with your actual key).
+
+4. Run the script:
+
+```bash
+python main.py
+```
+
+5. Follow the prompts to select an image and desired feature.
+
+**Example Output:**
+
+(The output will vary depending on the chosen feature and image content.)
+
+* **Text Extraction:** Extracted text from the image will be displayed.
+* **Problem Solving:** Step-by-step solution for the identified problem will be provided.
+* **Image Description:** A natural language description of the image content will be generated.
+
+**License:**
+
+This project is licensed under the MIT License (see LICENSE.md for details).
